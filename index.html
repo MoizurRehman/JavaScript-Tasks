@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>
+		javaScript
+		</title>
+	</head>
+<body>
+<script>
+
+//Day Time And Date
+var a =["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var mnt = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+var d = new Date();
+console.log(" Today is = "+a[d.getDay()]);
+var c = (d.getHours()>=12) ? "PM" : "AM" 
+console.log("Current Time is "+d.getHours()+" "+c+" : "+d.getMinutes()+":"+d.getSeconds());
+console.log("Current date is "+(mnt[d.getMonth()])+"-"+d.getDate()+"-"+d.getFullYear());
+
+// Area of Triangel
+document.write("Enter a Length Of First Side Of Triangle:<input type='text' id='s1'><br><br>"); 
+document.write("Enter a Length Of Second Side Of Triangle:<input type='text' id='s2'><br><br>");
+document.write("Enter a Length Of Third Side Of Triangle:<input type='text' id='s3'><br><br>");
+document.write("<Button onClick='AreaOfTriangle();'>Submit Values</button><br><br>");
+document.write("<h1 id='head'></h1>");
+
+// Print The Content
+document.write("Click Here To Print the Content Of window<br><br> ");
+document.write("<button onClick='print_content();'>Print</button>");
+
+function print_content(){
+window.print();
+}
+function AreaOfTriangle()
+{
+var v1 = document.getElementById("s1").value;
+var v2 = document.getElementById("s2").value;
+var v3 = document.getElementById("s3").value;
+var s = (v1+v2+v3)/2;
+var area = Math.sqrt(s*(s-v1)*(s-v2)*(s-v3));
+document.getElementById("head").innerHTML="Area of Triangle is = "+area;
+}
+</script>
+</body>
+</html>
